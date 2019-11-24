@@ -1,1 +1,9 @@
-<p>chartscb works!</p>
+
+<div *ngIf = "respSCB">    
+    <div style="width: 90%">
+        <canvas id="canvas"></canvas>
+        <canvas id="canvas2"></canvas>
+        <button *ngIf="btnGraphVisible" (click)='createData()' mat-raised-button> visa graf </button>
+        <a href="./scb"><button *ngIf="!(btnGraphVisible)" mat-raised-button> Ny sökning </button></a>        
+    </div>           
+</div>

@@ -1,1 +1,49 @@
-<p>callscb works!</p>
+<div class="body">
+    <div class="container">
+        <h2 >SCB API</h2>
+        <div *ngIf="btnTableVisible" class="btn table">
+            <button class="btnStart" (click)="getMenu()" mat-raised-button>Start</button>
+            <button class="btnBack"  (click)="backOneStep()" mat-raised-button> Tillbaka</button>
+        </div>
+        <div class="menuWidth table">
+            <app-menu-scb-item 
+            *ngFor="let menu of menuSCB" 
+            [menuSCB]='menu'
+            (deleteMenu)="variableMenu($event)">
+
+
+            </app-menu-scb-item>
+        </div>
+        
+    </div>
+
+    
+<div class="container-fluid">
+    <h3 *ngIf="variables"> {{ title }} </h3>
+
+    <div class="select table">
+      <form #userForm="ngForm">
+            <mat-form-field *ngFor='let variable of variables'>                
+                <mat-label > {{ variable.text }}  </mat-label>
+                <mat-select ngModel [name]="variable.code"  multiple >
+                    <mat-option  *ngFor='let text of variable.values; index as i' [value]="text" > 
+                        {{ variable.valueTexts[i]  }}
+                    </mat-option> 
+                </mat-select>                   
+            </mat-form-field>
+            
+            <div class="btn table">
+                <button class="btnSend" *ngIf='variables && this.isButtonVisible'  (click)="loadData(userForm)" mat-raised-button> SKICKA </button>
+                
+            </div>
+        </form>       
+    </div>
+      
+  </div> 
+
+  <app-chartscb [respSCB] = 'respSCB'
+                 [title]='title'
+                 [codeToName]='codeToName'></app-chartscb> 
+     
+</div>
+

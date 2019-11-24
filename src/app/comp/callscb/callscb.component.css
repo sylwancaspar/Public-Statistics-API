@@ -1,0 +1,44 @@
+.container > h2{
+    text-align: center;
+}
+
+.btn{
+  background-color:#99ff; 
+}
+
+.btn>button{
+  width: 5rem;
+  margin-right: 1rem;
+}
+
+.menu-heading{
+  text-align: center;
+}
+
+h3{
+  text-align: center;
+}
+
+.table {
+	display: table;   /* Allow the centering to work */
+	margin: 0 auto;
+}
+
+.select{
+  margin-right: 1rem;
+  margin: 0 auto;
+}
+
+li{
+  
+  display: inline-block;
+  margin-right: 2rem;
+  margin-left:2rem;
+  width: fit-content;
+  
+
+}
+
+.menuWidth{
+  width: 40%;
+}

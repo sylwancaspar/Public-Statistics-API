@@ -1,1 +1,7 @@
-<p>menu-scb-item works!</p>
+<ul class="resp-table" *ngIf="menuSCB">
+    <li (click)="newMenu(menuSCB)" class="table-row">
+        <div class="col col-1">
+            {{ menuSCB.text }}
+        </div>  
+    </li>
+</ul>
