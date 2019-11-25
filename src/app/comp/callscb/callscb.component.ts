@@ -37,14 +37,13 @@ export class CallscbComponent implements OnInit {
 
   getMenu(){  
       
+    let sub;
       this.isButtonVisible = false;
       this.MS.getMenuSCB().subscribe(menu => {
-      this.menuSCB = menu;
-      
-      });
+        this.menuSCB = menu;
   
-    }
-
+    });
+  }
     
   backOneStep(){
     this.title = '';

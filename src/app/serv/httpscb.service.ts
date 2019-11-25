@@ -9,16 +9,16 @@ import { Menuscb } from '../models/menuscb';
 })
 export class HttpscbService {
 
-  MenuSCBUrl:string = 'http://api.scb.se/OV0104/v1/doris/sv/ssd';
+  MenuSCBUrl:string = 'https://api.scb.se/OV0104/v1/doris/sv/ssd';
   addChoice:string = "";
   menuLength:number;
 
 
   constructor(private http:HttpClient) { }
 
-  getMenuSCB():Observable<Menuscb>{
+  getMenuSCB():Observable<Menuscb[]>{
     this.addChoice="";
-    return this.http.get<Menuscb>(`${this.MenuSCBUrl}`);
+    return this.http.get<Menuscb[]>(`${this.MenuSCBUrl}`);
   }
 
   getNewMenuSCB(addChoice:string):Observable<Menuscb[]>{

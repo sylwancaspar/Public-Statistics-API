@@ -14,6 +14,7 @@ import { CallscbComponent } from './comp/callscb/callscb.component';
 import { MenuScbItemComponent } from './comp/menu-scb-item/menu-scb-item.component';
 import { ChartscbComponent } from './comp/chartscb/chartscb.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpscbService } from './serv/httpscb.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    HttpscbService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
